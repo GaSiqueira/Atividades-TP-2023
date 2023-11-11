@@ -9,7 +9,7 @@ export default class Início extends Component<props>{
         let tema = this.props.tema
         return(
             <div className="container-fluid">
-                <h1 className="container-fluid">Projeto PetLovers</h1>
+                <h3 className="container-fluid">Projeto PetLovers</h3>
                 <p className="container-fluid">O projeto petlovers</p>
             </div>
         )
