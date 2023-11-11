@@ -18,11 +18,18 @@ sem conhecimento da implementação back-end.
 
 Para acessar as informações do serviço deve-se conhecer suas rotas, seus end-points. O pré-projeto back-end
 possui os seguintes end-points, considerando a execução em máquina local:
+
 • http://localhost:32831/cliente/clientes - rota para acesso da lista de clientes.
+
 • http://localhost:32831/cliente/{id} - rota para acesso a um cliente específico, por id.
+
 • http://localhost:32831/cliente/cadastrar - rota para cadastrar um novo cliente.
+
 • http://localhost:32831/cliente/excluir - rota para excluir um cliente.
+
 • http://localhost:32831/cliente/atualizar - rota para atualizar um cliente.
+
+
 O micro-serviço segue parte dos critérios necessários para ser considerado uma aplicação RESTful e, portanto,
 a comunicação dele com um front-end deve ser a mais flexível possível. Assim, todo o tráfego de dados entre
 o micro-serviço e o front-end acontece através da passagem de objetos do tipo JSON.
