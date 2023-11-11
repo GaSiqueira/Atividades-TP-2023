@@ -7,6 +7,8 @@ import FormualarioCadastroProdutos from "./formularioCadastroProdutos";
 import FormualarioCadastroServicos from "./formularioCadastroServico";
 import ListaPet from "./listaPets";
 import ListaProduto from "./listaProdutos";
+import Início from "./inicio";
+import ListaServiço from "./listaServicos";
 
 type state = {
     tela: string
@@ -16,7 +18,7 @@ export default class Roteador extends Component<{}, state>{
     constructor(props: {} | Readonly<{}>) {
         super(props)
         this.state = {
-            tela: 'Clientes'
+            tela: 'Início'
                     }
         this.selecionarView = this.selecionarView.bind(this)
     }
@@ -30,68 +32,92 @@ export default class Roteador extends Component<{}, state>{
     }
 
     render() {
-        let barraNavegacao = <BarraNavegacao seletorView={this.selecionarView} tema="#e3f2fd" botoes={['Clientes','Pets','Produtos','Serviços','Cadastro Cliente', 'Cadastro Pet', 'Cadastro Produto', 'Cadastro Serviço']} />
-        if (this.state.tela === 'Clientes') {
-            return (
+        let barraNavegacao = <BarraNavegacao seletorView={this.selecionarView} tema="#e3f2fd" botoes={['Início','Listar','Cadastrar']} />
+        if(this.state.tela === 'Início'){
+            return(
                 <>
                     {barraNavegacao}
+                    <Início tema="#e3f2fd"/>
+                </>
+            )
+        }
+        if (this.state.tela === 'Listar' || this.state.tela === 'Clientes') {
+            let barraListagem = <BarraNavegacao seletorView={this.selecionarView} tema="#e3f2fd" botoes={['Início','Clientes', 'Pets', 'Produtos', 'Serviços']} />
+
+            return (
+                <>
+                    {barraListagem}
                     <ListaCliente tema="#e3f2fd" />
                 </>
             )
         }
         if (this.state.tela === 'Pets') {
+            let barraListagem = <BarraNavegacao seletorView={this.selecionarView} tema="#e3f2fd" botoes={['Início','Clientes', 'Pets', 'Produtos', 'Serviços']} />
             return (
                 <>
-                    {barraNavegacao}
+                    {barraListagem}
                     <ListaPet tema="#e3f2fd" />
                 </>
             )
         }
         if (this.state.tela === 'Produtos') {
+            let barraListagem = <BarraNavegacao seletorView={this.selecionarView} tema="#e3f2fd" botoes={['Início','Clientes', 'Pets', 'Produtos', 'Serviços']} />
             return (
                 <>
-                    {barraNavegacao}
+                    {barraListagem}
                     <ListaProduto tema="#e3f2fd" />
                 </>
             )
         }
         if (this.state.tela === 'Serviços') {
+            let barraListagem = <BarraNavegacao seletorView={this.selecionarView} tema="#e3f2fd" botoes={['Início','Clientes', 'Pets', 'Produtos', 'Serviços']} />
             return (
                 <>
-                    {barraNavegacao}
-                    <ListaProduto tema="#e3f2fd" />
+                    {barraListagem}
+                    <ListaServiço tema="#e3f2fd" />
                 </>
             )
         } 
-        if (this.state.tela === 'Cadastro Cliente') {
+        if (this.state.tela === 'Cadastro Cliente' || this.state.tela === 'Cadastrar') {
+            let barraCadastro = <BarraNavegacao seletorView={this.selecionarView} tema="#e3f2fd" botoes={['Início','Cadastro Cliente', 'Cadastro Pet', 'Cadastro Produto', 'Cadastro Serviço']} />
             return (
                 <>
-                    {barraNavegacao}
+                    {barraCadastro}
                     <FormularioCadastroCliente tema="#e3f2fd" />
                 </>
             )
         }
         if (this.state.tela === 'Cadastro Pet'){
+            let barraCadastro = <BarraNavegacao seletorView={this.selecionarView} tema="#e3f2fd" botoes={['Início','Cadastro Cliente', 'Cadastro Pet', 'Cadastro Produto', 'Cadastro Serviço']} />
             return(
                 <>
-                    {barraNavegacao}
+                    {barraCadastro}
                     <FormularioCadastroPet tema="#e3f2fd" />
                 </>
             )
         }
         if(this.state.tela === 'Cadastro Produto'){
+            let barraCadastro = <BarraNavegacao seletorView={this.selecionarView} tema="#e3f2fd" botoes={['Início','Cadastro Cliente', 'Cadastro Pet', 'Cadastro Produto', 'Cadastro Serviço']} />
             return(
                 <>
-                    {barraNavegacao}
+                    {barraCadastro}
                     <FormualarioCadastroProdutos tema = "#e3f2fd" />
                 </>
             )
         }
         if(this.state.tela === 'Cadastro Serviço'){
+            let barraCadastro = <BarraNavegacao seletorView={this.selecionarView} tema="#e3f2fd" botoes={['Início','Cadastro Cliente', 'Cadastro Pet', 'Cadastro Produto', 'Cadastro Serviço']} />
             return(
                 <>
-                    {barraNavegacao}
+                    {barraCadastro}
                     <FormualarioCadastroServicos tema = "#e3f2fd" />
+                </>
+            )
+        }
+        if(this.state.tela === 'Início'){
+            return(
+                <>
+                    <Roteador/>
                 </>
             )
         }
