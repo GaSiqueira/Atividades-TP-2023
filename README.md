@@ -7,6 +7,7 @@ Você é um empreendedor muito atento e percebeu o potencial do mercado pet. Al�
 5. Listagem geral dos serviços ou produtos mais consumidos. 
 6. Listagem dos serviços ou produtos mais consumidos por tipo e raça de pets. 
 7. Listagem dos 5 clientes que mais consumiram em valor, não em quantidade.
+
 Para este desenvolvimento não será necessário comunicação direta com um algum banco de dados ou qualquer outro software para armazenamento de dados. O sistema do tipo CLI irá armazenar os dados durante sua execução.
 
 # Atividades:
