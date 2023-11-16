@@ -1,4 +1,4 @@
-export default function CadastrarProduto(){
+export default function CadastrarProduto(props){
     let tema = props.tema
     return(
         <div className="container-fluid">

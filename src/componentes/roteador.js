@@ -20,7 +20,7 @@ export default function Roteador() {
         if (tela === 'Listar' || 'Clientes') {
             return (
                 <>
-                    <BarraNavegacao seletorView={selecionarView} tema="#e3f2fd" botoes={['Clientes', 'Pets', 'Serviços', 'Produtos']} />
+                    <BarraNavegacao seletorView={selecionarView} tema="#e3f2fd" botoes={['inicio', 'Clientes', 'Pets', 'Serviços', 'Produtos']} />
                     <ListaCliente tema="#e3f2fd" />
                 </>
 
@@ -59,7 +59,7 @@ export default function Roteador() {
             </>
             )
         }
-        else{
+        if(tela === 'inicio'){
             return(
                 <>
                     <BarraNavegacao seletorView={selecionarView} tema="#e3f2fd" botoes ={['Listar', 'Cadastros']} />
