@@ -1,13 +1,13 @@
 import Entrada from "../io/entrada";
 import Empresa from "../modelo/empresa";
-import CadastroCliente from "../negocio/cadastroCliente";
-import CadastroServico from "../negocio/cadastroServico";
-import CadastroPet from "../negocio/cadastroPet";
-import CadastroProduto from "../negocio/cadastroProduto";
-import ListagemClientes from "../negocio/listagemClientes";
-import ListagemPets from "../negocio/listagemPets";
-import ListagemServicos from "../negocio/listagemServico";
-import ListagemProdutos from "../negocio/listagemProdutos";
+import CadastroCliente from "../negocio/Cadastros/cadastroCliente";
+import CadastroServico from "../negocio/Cadastros/cadastroServico";
+import CadastroPet from "../negocio/Cadastros/cadastroPet";
+import CadastroProduto from "../negocio/Cadastros/cadastroProduto";
+import ListagemClientes from "../negocio/Listar/listagemClientes";
+import ListagemPets from "../negocio/Listar/listagemPets";
+import ListagemServicos from "../negocio/Listar/listagemServico";
+import ListagemProdutos from "../negocio/Listar/listagemProdutos";
 
 
 
