@@ -11,4 +11,7 @@ export default class RG {
     public get getDataEmissao(): Date {
         return this.dataEmissao
     }
+    public set setDataEmissao(dataEmissao: Date){
+        this.dataEmissao = dataEmissao
+    }
 }

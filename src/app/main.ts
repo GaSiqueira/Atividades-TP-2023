@@ -19,14 +19,17 @@ let execucao = true
 
 while (execucao) {
     console.log(`Opções:`);
+    console.log('---------Cadastrar---------')
     console.log(`1 - Cadastrar cliente`);
     console.log(`2 - Cadastrar pet`);
     console.log(`3 - Cadastrar servico`);
     console.log(`4 - Cadastrar produto`);
+    console.log('---------Deletar------------')
     console.log(`5 - Deletar cliente`);
     console.log(`6 - Deletar pet`);
     console.log(`7 - Deletar serviço`);
     console.log(`8 - Deletar produto`);
+    console.log('-----------Listar-----------')
     console.log(`9 - Listar todos os clientes`);
     console.log(`10 - Listar todos os pets`);
     console.log(`11 - Listar todos os serviços`);
