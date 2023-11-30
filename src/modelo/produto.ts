@@ -7,7 +7,6 @@ export default class Produto {
         this.descricao = descricao
         this.valor = valor
     }
-
     public get getNome(){
         return this.nome
     }
