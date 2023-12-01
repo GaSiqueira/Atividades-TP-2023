@@ -1,9 +1,9 @@
 import Entrada from "../io/entrada";
 import Empresa from "../modelo/empresa";
-import CadastroCliente from "../negocio/Cadastros/cadastroCliente";
-import CadastroServico from "../negocio/Cadastros/cadastroServico";
-import CadastroPet from "../negocio/Cadastros/cadastroPet";
-import CadastroProduto from "../negocio/Cadastros/cadastroProduto";
+import CadastroCliente from "../negocio/Cadastrar/cadastroCliente";
+import CadastroServico from "../negocio/Cadastrar/cadastroServico";
+import CadastroPet from "../negocio/Cadastrar/cadastroPet";
+import CadastroProduto from "../negocio/Cadastrar/cadastroProduto";
 import ListagemClientes from "../negocio/Listar/listagemClientes";
 import ListagemPets from "../negocio/Listar/listagemPets";
 import ListagemServicos from "../negocio/Listar/listagemServico";
@@ -11,6 +11,12 @@ import ListagemProdutos from "../negocio/Listar/listagemProdutos";
 import editarProduto from "../negocio/Editar/editarProduto";
 import editarServico from "../negocio/Editar/editarServico";
 import editarPet from "../negocio/Editar/editarPet";
+import DeletarCliente from "../negocio/Deletar/deletarCliente";
+import DeletarServico from "../negocio/Deletar/deletarServico";
+import DeletarProduto from "../negocio/Deletar/deletarProduto";
+import Deletarpet from "../negocio/Deletar/deletarPet";
+import DeletarPet from "../negocio/Deletar/deletarPet";
+import editarCliente from "../negocio/Editar/editarCliente";
 
 
 
@@ -28,17 +34,17 @@ while (execucao) {
     console.log(`3 - Cadastrar servico`);
     console.log(`4 - Cadastrar produto`);
     console.log('---------Deletar------------')
-    console.log(`5 - Deletar cliente(WIP)`);
-    console.log(`6 - Deletar pet(WIP)`);
-    console.log(`7 - Deletar serviço(WIP)`);
-    console.log(`8 - Deletar produto(WIP)`);
+    console.log(`5 - Deletar cliente`);
+    console.log(`6 - Deletar pet`);
+    console.log(`7 - Deletar serviço`);
+    console.log(`8 - Deletar produto`);
     console.log('-----------Listar-----------')
     console.log(`9 - Listar todos os clientes`);
     console.log(`10 - Listar todos os pets`);
     console.log(`11 - Listar todos os serviços`);
     console.log(`12 - Listar todos os produtos`);
     console.log('-----------Editar--------------')
-    console.log(`13- Editar cliente(WIP)`)
+    console.log(`13- Editar cliente`)
     console.log(`14- Editar pet`)
     console.log(`15- Editar servico`)
     console.log(`16- Editar produto`)
@@ -46,7 +52,8 @@ while (execucao) {
     console.log(`17- 10 clientes que mais consumiram produtos por quantidade(WIP)`)
     console.log(`18- 10 produtos mais consumidos(WIP)`)
     console.log(`19- Produtos mais consumidos por raça(WIP)`)
-    console.log(`20- 5 clientes que mais consumiram em valor(WIP)`)
+    console.log(`20- Pordutos mais consumidos por tipo(WIP)`)
+    console.log(`21- 5 clientes que mais consumiram em valor(WIP)`)
 
     console.log(`0 - Sair`);
     
@@ -71,12 +78,20 @@ while (execucao) {
             cadastroProduto.cadastrar()
             break;
         case 5:
+            let delCliente = new DeletarCliente(empresa.getClientes)
+            delCliente.deletar()
             break;
         case 6:
+            let delPet = new DeletarPet(empresa.getPets)
+            delPet.deletar()
             break;
         case 7:
+            let delServico = new DeletarServico(empresa.getServicos)
+            delServico.deletar()
             break;
         case 8:
+            let delProduto = new DeletarProduto(empresa.getProdutos)
+            delProduto.deletar()
             break;
         case 9:
             let listagemClientes = new ListagemClientes(empresa.getClientes)
@@ -95,7 +110,9 @@ while (execucao) {
             listagemProdutos.listar()
             break;
         case 13:
-            
+            let attCliente = new editarCliente(empresa.getClientes)
+            attCliente.editar()
+            break
         case 14:
             let attPet = new editarPet(empresa.getPets)
             attPet.editar()

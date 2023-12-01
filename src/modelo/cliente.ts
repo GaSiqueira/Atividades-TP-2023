@@ -49,4 +49,9 @@ export default class Cliente {
     public get getPets(): Array<Pet>{
         return this.pets
     }
+    public addTelefones(telefones: Telefone[]): void {
+        telefones.forEach((telefone) => {
+            this.telefones.push(telefone)
+        })
+    }
 }
