@@ -9,7 +9,7 @@ export default class ClientesMaisCosumiram extends Listagem{
     }
     public listar(): void {
         const OrdClientes = this.clientes.sort((a, b) => b.getQuantidadeConsumidos - a.getQuantidadeConsumidos)
-        console.log(`Top 10 clientes que mais consumiram produtos ou serviços: `)
+        console.log(`\n Top 10 clientes que mais consumiram produtos ou serviços: `)
         for (let i = 0; i<Math.min(10, OrdClientes.length); i++){
             const cliente = OrdClientes[i]
             console.log(`Nome: ` + cliente.nome)

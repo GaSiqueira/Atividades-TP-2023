@@ -19,6 +19,9 @@ import editarCliente from "../negocio/Editar/editarCliente";
 import registrarVendaProduto from "../negocio/RegistroVendas/resgistrarVendaProduto";
 import ClientesMaisCosumiram from "../negocio/ranks/ClientesMaisComsumiram";
 import registrarVendaServico from "../negocio/RegistroVendas/registrarVendaServico";
+import BaseClientes from "../modelo/clientesBase";
+import EstoqueDeProdutos from "../negocio/estoque/estoqueDeProdutos";
+import EstoqueDeServicos from "../negocio/estoque/estoqueDeServico";
 
 
 
@@ -27,6 +30,12 @@ import registrarVendaServico from "../negocio/RegistroVendas/registrarVendaServi
 console.log(`Bem-vindo ao melhor sistema de gerenciamento de pet shops e clínicas veterinarias`)
 let empresa = new Empresa()
 let execucao = true
+let ClientesBase = new BaseClientes(empresa.getClientes)
+let EstoqueProdutos = new EstoqueDeProdutos(empresa.getProdutos)
+let EstoqueServicos = new EstoqueDeServicos(empresa.getServicos)
+ClientesBase.cadastrar()
+EstoqueProdutos.cadastrar()
+EstoqueServicos.cadastrar()
 
 while (execucao) {
     console.log(`Opções:`)
@@ -54,7 +63,7 @@ while (execucao) {
     console.log(`17- Registrar venda de produto`)
     console.log(`18- Registrar venda de serviço`)
     console.log('------------RANKS--------------')
-    console.log(`19- 10 clientes que mais consumiram produtos por quantidade(WIP)`)
+    console.log(`19- 10 clientes que mais consumiram produtos por quantidade`)
     console.log(`20- 10 produtos mais consumidos(WIP)`)
     console.log(`21- Produtos mais consumidos por raça(WIP)`)
     console.log(`22- Produtos mais consumidos por tipo(WIP)`)
