@@ -11,6 +11,8 @@ export default class CadastroProduto extends Cadastro{
         this.entrada = new Entrada()
     }
     public cadastrar(): void {
+        let quantidadeVendas = 0
+        let valorVendas = 0
         console.log(`Inicio de cadastro de produto`)
         let nome = this.entrada.receberTexto(`Informe o nome do produto: `)
         let registrados = this.produtos.map(x => (x.nome))
@@ -21,7 +23,7 @@ export default class CadastroProduto extends Cadastro{
         else{
             let descricao = this.entrada.receberTexto(`Informe a descrição do produto: `)
             let valor = this.entrada.receberNumero(`Informe o valor do produto: `)
-            let cadastar = new Produto(nome, descricao, valor);
+            let cadastar = new Produto(nome, descricao, valor, quantidadeVendas, valorVendas);
             this.produtos.push(cadastar)
         }
     }

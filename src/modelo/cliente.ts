@@ -16,7 +16,9 @@ export default class Cliente {
     private produtosConsumidos: Array<Produto>
     private servicosConsumidos: Array<Servico>
     private pets: Array<Pet>
-    constructor(nome: string, nomeSocial: string, cpf: CPF, genero:string) {
+    private quantidadeConsumidos: number
+    private valorConsumidos: number
+    constructor(nome: string, nomeSocial: string, cpf: CPF, genero:string,  quantidadeConsumidos: number, valorConsumidos: number) {
         this.nome = nome
         this.genero = genero
         this.nomeSocial = nomeSocial
@@ -27,6 +29,8 @@ export default class Cliente {
         this.produtosConsumidos = []
         this.servicosConsumidos = []
         this.pets = []
+        this.quantidadeConsumidos = quantidadeConsumidos
+        this.valorConsumidos = valorConsumidos
     }
     public get getCpf(): CPF {
         return this.cpf
@@ -40,18 +44,37 @@ export default class Cliente {
     public get getTelefones(): Array<Telefone> {
         return this.telefones
     }
-    public get getProdutosConsumidos(): Array<Produto> {
-        return this.produtosConsumidos
+    public get getProdutosConsumidos(): string[] {
+        return this.produtosConsumidos.map(produto => produto.nome)
     }
-    public get getServicosConsumidos(): Array<Servico> {
-        return this.servicosConsumidos
+    public get getServicosConsumidos(): string [] {
+        return this.servicosConsumidos.map(servico => servico.nome)
     }
     public get getPets(): Array<Pet>{
         return this.pets
+    }
+        public get getQuantidadeConsumidos(): number {
+        return this.quantidadeConsumidos
+    }
+    public get getValorConsumidos(): number {
+        return this.valorConsumidos
     }
     public addTelefones(telefones: Telefone[]): void {
         telefones.forEach((telefone) => {
             this.telefones.push(telefone)
         })
+    }
+    public registrarVendaProduto(produto: Produto, quantidadeVendida: number): void {
+        if (!this.produtosConsumidos.includes(produto)) {
+            this.produtosConsumidos.push(produto);
+        }
+        this.quantidadeConsumidos = this.quantidadeConsumidos + quantidadeVendida
+        this.valorConsumidos = this.valorConsumidos + produto.valor * quantidadeVendida 
+        produto.adicionarVenda(quantidadeVendida);
+    }
+    public registrarVendaServico(servico: Servico): void{
+        if(!this.servicosConsumidos.includes(servico)) {
+            this.servicosConsumidos.push(servico);
+        }
     }
 }

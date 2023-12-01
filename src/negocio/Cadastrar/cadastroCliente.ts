@@ -14,6 +14,8 @@ export default class CadastroCliente extends Cadastro {
         this.entrada = new Entrada()
     }
     public cadastrar(): void {
+        let quantConsu = 0
+        let Vconsu = 0
         console.log(`\nInício do cadastro do cliente`);
         let nome = this.entrada.receberTexto(`Por favor informe o nome do cliente: `)
         let nomeSocial = this.entrada.receberTexto(`Por favor informe o nome social do cliente: `)
@@ -26,7 +28,7 @@ export default class CadastroCliente extends Cadastro {
         let dia = new Number(partesData[0].valueOf()).valueOf()
         let dataEmissao = new Date(ano, mes, dia)
         let cpf = new CPF(valor, dataEmissao);
-        let cliente = new Cliente(nome, nomeSocial, cpf, genero);
+        let cliente = new Cliente(nome, nomeSocial, cpf, genero, quantConsu, Vconsu);
 
         valor = this.entrada.receberTexto(`Informe o número do RG: `)
         data = this.entrada.receberTexto(`Informe a data de emissão do RG (dd/mm/yyyy): `)

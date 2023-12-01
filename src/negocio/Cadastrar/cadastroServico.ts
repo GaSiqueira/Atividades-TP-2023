@@ -11,6 +11,7 @@ export default class CadastroServico extends Cadastro{
         this.entrada = new Entrada()
     }
     public cadastrar(): void {
+        let Vvendas = 0
         console.log(`\n Inicio do cadastro de serviço`);
         let nome = this.entrada.receberTexto(`Informe o nome do serviço: `)
         let registrados = this.servicos.map(x =>(x.nome))
@@ -21,7 +22,7 @@ export default class CadastroServico extends Cadastro{
         else{
             let descricao = this.entrada.receberTexto(`Informe a descrição do serviço: `)
             let valor = this.entrada.receberNumero(`Informe o valor do serviço: `)
-            let servico = new Servico(nome, descricao, valor)
+            let servico = new Servico(nome, descricao, valor, Vvendas)
             this.servicos.push(servico)
         }
 
