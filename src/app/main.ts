@@ -48,12 +48,15 @@ while (execucao) {
     console.log(`14- Editar pet`)
     console.log(`15- Editar servico`)
     console.log(`16- Editar produto`)
-    console.log('-----------RANKS----------------')
-    console.log(`17- 10 clientes que mais consumiram produtos por quantidade(WIP)`)
-    console.log(`18- 10 produtos mais consumidos(WIP)`)
-    console.log(`19- Produtos mais consumidos por raça(WIP)`)
-    console.log(`20- Pordutos mais consumidos por tipo(WIP)`)
-    console.log(`21- 5 clientes que mais consumiram em valor(WIP)`)
+    console.log(`-------Registro De Vendas--------`)
+    console.log(`17- Registrar venda de produto(WIP)`)
+    console.log(`18- Registrar venda de serviço(WIP)`)
+    console.log('------------RANKS--------------')
+    console.log(`19- 10 clientes que mais consumiram produtos por quantidade(WIP)`)
+    console.log(`20- 10 produtos mais consumidos(WIP)`)
+    console.log(`21- Produtos mais consumidos por raça(WIP)`)
+    console.log(`22- Produtos mais consumidos por tipo(WIP)`)
+    console.log(`23- 5 clientes que mais consumiram em valor(WIP)`)
 
     console.log(`0 - Sair`);
     
@@ -124,6 +127,20 @@ while (execucao) {
         case 16:
             let attServico = new editarServico(empresa.getServicos)
             attServico.editar()
+            break
+        case 17:
+            break
+        case 18:
+            break
+        case 19:
+            break
+        case 20:
+            break
+        case 21:
+            break
+        case 22:
+            break
+        case 23:
             break
         case 0:
             execucao = false
