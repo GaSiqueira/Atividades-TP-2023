@@ -9,6 +9,8 @@ import ListaPet from "./Listas/listaPets";
 import ListaProduto from "./Listas/listaProdutos";
 import Início from "./inicio";
 import ListaServiço from "./Listas/listaServicos";
+import RegistrarVendaProduto from "./Registros/RegistrarVenda";
+import RegistrarVendaServico from "./Registros/RegistrarVendaServ";
 
 type state = {
     tela: string
@@ -32,7 +34,7 @@ export default class Roteador extends Component<{}, state>{
     }
 
     render() {
-        let barraNavegacao = <BarraNavegacao seletorView={this.selecionarView} tema="#e3f2fd" botoes={['Início','Listar','Cadastrar']} />
+        let barraNavegacao = <BarraNavegacao seletorView={this.selecionarView} tema="#e3f2fd" botoes={['Início','Listar','Cadastrar', 'Registrar']} />
         if(this.state.tela === 'Início'){
             return(
                 <>
@@ -111,6 +113,24 @@ export default class Roteador extends Component<{}, state>{
                 <>
                     {barraCadastro}
                     <FormualarioCadastroServicos tema = "#e3f2fd" />
+                </>
+            )
+        }
+        if(this.state.tela === 'Registrar'|| 'Registrar produto'){
+            let barraRegistro = <BarraNavegacao seletorView={this.selecionarView} tema="#e3f2fd" botoes={['Início','Registrar produto', 'Registrar serviço']} />
+            return(
+                <>
+                    {barraRegistro}
+                    <RegistrarVendaProduto tema = "#e3f2fd" />
+                </>
+            )
+        }
+        if(this.state.tela === 'Registrar serviço'){
+            let barraRegistro = <BarraNavegacao seletorView={this.selecionarView} tema="#e3f2fd" botoes={['Início','Registrar produto', 'Registrar serviço']} />
+            return(
+                <>
+                    {barraRegistro}
+                    <RegistrarVendaServico tema = "#e3f2fd" />
                 </>
             )
         }
