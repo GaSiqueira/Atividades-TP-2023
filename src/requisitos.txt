@@ -6,7 +6,7 @@
 
 4. Listagem dos 10 clientes que mais consumiram produtos ou serviços, em quantidade, não em valor. FEITO
 
-5. Listagem geral dos serviços ou produtos mais consumidos. FEITO 1/2
+5. Listagem geral dos serviços ou produtos mais consumidos. FEITO
 
 6. Listagem dos serviços ou produtos mais consumidos por tipo e raça de pets. WIP
 

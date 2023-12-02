@@ -17,11 +17,14 @@ import DeletarProduto from "../negocio/Deletar/deletarProduto";
 import DeletarPet from "../negocio/Deletar/deletarPet";
 import editarCliente from "../negocio/Editar/editarCliente";
 import registrarVendaProduto from "../negocio/RegistroVendas/resgistrarVendaProduto";
-import ClientesMaisCosumiram from "../negocio/ranks/ClientesMaisComsumiram";
+import ClientesMaisCosumiram from "../negocio/ranks/ClientesMaisConsumiram";
 import registrarVendaServico from "../negocio/RegistroVendas/registrarVendaServico";
 import BaseClientes from "../modelo/clientesBase";
 import EstoqueDeProdutos from "../negocio/estoque/estoqueDeProdutos";
 import EstoqueDeServicos from "../negocio/estoque/estoqueDeServico";
+import ProdutosMaisConsumidos from "../negocio/ranks/ProdutosMaisConsumidos";
+import ServicosMaisConsumidos from "../negocio/ranks/serviçosMaisConsumidos";
+import ClientesMaisConsumoValor from "../negocio/ranks/ClientesMaisConsumiramValor"
 
 
 
@@ -64,10 +67,9 @@ while (execucao) {
     console.log(`18- Registrar venda de serviço`)
     console.log('------------RANKS--------------')
     console.log(`19- 10 clientes que mais consumiram produtos por quantidade`)
-    console.log(`20- 10 produtos mais consumidos(WIP)`)
-    console.log(`21- Produtos mais consumidos por raça(WIP)`)
-    console.log(`22- Produtos mais consumidos por tipo(WIP)`)
-    console.log(`23- 5 clientes que mais consumiram em valor(WIP)`)
+    console.log(`20- 10 produtos mais consumidos`)
+    console.log(`21- Serviços mais consumidos`)
+    console.log(`22- 5 clientes que mais consumiram em valor`)
 
     console.log(`0 - Sair`);
     
@@ -145,10 +147,24 @@ while (execucao) {
             break
         case 18:
             let regVendaServico = new registrarVendaServico(empresa.getClientes, empresa.getServicos)
-            regVendaServico.cadastrar()    
+            regVendaServico.cadastrar()
+            break    
         case 19:
             let rank10Consu = new ClientesMaisCosumiram(empresa.getClientes)
             rank10Consu.listar()
+            break
+        case 20:
+            let pMaisCunso = new ProdutosMaisConsumidos(empresa.getProdutos)
+            pMaisCunso.listar()
+            break
+        case 21:
+            let pServConsu = new ServicosMaisConsumidos(empresa.getServicos)
+            pServConsu.listar()
+            break
+        case 22:
+            let MConsu = new ClientesMaisConsumoValor (empresa.getClientes)
+            MConsu.listar()
+            break
         case 0:
             execucao = false
             console.log(`Até mais`)
