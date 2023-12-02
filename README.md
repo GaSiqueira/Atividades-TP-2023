@@ -10,6 +10,27 @@ Você é um empreendedor muito atento e percebeu o potencial do mercado pet. Al�
 
 Para este desenvolvimento não será necessário comunicação direta com um algum banco de dados ou qualquer outro software para armazenamento de dados. O sistema do tipo CLI irá armazenar os dados durante sua execução.
 
+## Como rodar ##
+
+É necessário ter NodeJs e Git instalados no seu computador:
+- Clone o repositório:
+
+```
+git clone https://github.com/GaSiqueira/Atividades-TP-2023.git .
+```
+- Instale as dependências do projeto:
+``` 
+npm i
+``` 
+- Dentro da pasta root do projeto, digite o seguinte comando para a geração dos arquivos JS:
+```
+tsc
+```
+
+- Agora no diretorio root do projeto digite o seguinte comando para iniciar os processo:
+```
+node out\app\main.js
+```
 # Atividades:
 ## <a href='https://github.com/GaSiqueira/Atividades-TP-2023/tree/Atv1'>**ATV1: CLI**</a>
 ## <a href='https://github.com/GaSiqueira/Atividades-TP-2023/tree/Atv2'>**ATV2: Interface gráfica**</a>
