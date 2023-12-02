@@ -24,6 +24,9 @@ export default class Produto {
         return this.valorVendas
     }
     
+    public get getQuantidadeVendas(): number{
+        return this.quantidadeVendas
+    }
     public adicionarVenda(quantidade: number): void {
         this.quantidadeVendas += quantidade;
         this.valorVendas = this.valorVendas + quantidade * this.valor;

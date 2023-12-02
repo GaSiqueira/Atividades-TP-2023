@@ -1,16 +1,16 @@
-1. CRUD (Create, Read, Update e Delete) de clientes e seus respectivos Pets.
+1. CRUD (Create, Read, Update e Delete) de clientes e seus respectivos Pets. FEITO
 
-2. CRUD de produtos e serviços.
+2. CRUD de produtos e serviços. FEITO
 
-3. Registro de consumo dos produtos ou serviços que cada cliente adquiriu.
+3. Registro de consumo dos produtos ou serviços que cada cliente adquiriu. FEITO
 
-4. Listagem dos 10 clientes que mais consumiram produtos ou serviços, em quantidade, não em valor.
+4. Listagem dos 10 clientes que mais consumiram produtos ou serviços, em quantidade, não em valor. FEITO
 
-5. Listagem geral dos serviços ou produtos mais consumidos.
+5. Listagem geral dos serviços ou produtos mais consumidos. FEITO 1/2
 
-6. Listagem dos serviços ou produtos mais consumidos por tipo e raça de pets.
+6. Listagem dos serviços ou produtos mais consumidos por tipo e raça de pets. WIP
 
-7. Listagem dos 5 clientes que mais consumiram em valor, não em quantidade.
+7. Listagem dos 5 clientes que mais consumiram em valor, não em quantidade. FEITO
 
 
 
