@@ -17,7 +17,7 @@ export default class ServicosMaisConsumidos extends Listagem{
             console.log(`Descrição: `+servico.descricao)
             console.log(`Valor: `+servico.valor)
             console.log(`Quantidade de vezes consumido: `+servico.getservicosPrestados)
-            console.log(`Valor total das vendas: R$ ${servico.getvalorVendas.toFixed(2)}`)
+            console.log(`Valor total das vendas: R$ ${servico.getvalorVendas}`)
         }
     }
 }
