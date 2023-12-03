@@ -10,9 +10,10 @@ export default function ListaCliente(props: any){
         let red = "#fc6464"
         let tema = props.tema
         let green = "#00ff00"
-        const [clientes, setClientes] = useState<Array<{id:number; nome:string; nome_social:string;genero:string; email:string; cpf:string; dataCpf:Date; rg:string; dataRg:Date; servico_consumido:number, produto_consumido:number }>>([])
+        const [clientes, setClientes] = useState<Array<{id:number; nome:string; nome_social:string; genero:string; email:string; cpf:string; dataCpf:Date; rg:string; dataRg:Date; servico_consumido:number, produto_consumido:number }>>([])
         const [nome, setNome] = useState('')
         const [nome_social, setNomeSocial] = useState('')
+        const [genero, setGenero] = useState('')
         const [email, setEmail] = useState('');
         const [cerror, setError] = useState('');
 
@@ -39,7 +40,7 @@ export default function ListaCliente(props: any){
 
         const handleUpdate = (id: number) =>{
             if(nome && nome_social && email){
-              axios.put(`http://localhost:3001/clientesEditar/${id}`, {nome, nome_social, email})
+              axios.put(`http://localhost:3001/clientesEditar/${id}`, {nome, nome_social, genero, email})
                 .then(()=>{
                     updateClientes();
                     setNome('')
@@ -50,7 +51,7 @@ export default function ListaCliente(props: any){
                   console.error(error)
                 })
             }
-            else if(nome === '' || nome_social === '' || email === ''){
+            else if(nome === '' || nome_social === '' || email === '' || genero){
                 setError('Preencha todos os campos, caso não for editar apenas coloque o mesmo valor anterior!')
             }  
      }
@@ -98,6 +99,15 @@ export default function ListaCliente(props: any){
                                     <div className="input-group-3">
                                         <label className="input-group mb-1">Nome Social:</label>
                                         <input type="text" className="form-control" value={nome_social} onChange={(e)=>setNomeSocial(e.target.value)} placeholder={cliente.nome_social} aria-label="Nome cliente" aria-describedby="basic-addon1"/>
+                                    </div>
+                                    <div className="input-group-3">
+                                        <label className="input-group mb-1">Gênero</label>
+                                        <select className="form-select" value={genero} onChange={(e)=>setGenero(e.target.value)}>
+                                            <option value="">{cliente.genero}</option>
+                                            <option value="masculino">Masculino</option>
+                                            <option value="feminino">Feminino</option>
+                                            <option value="outro">Outro</option>
+                                        </select>
                                     </div>
                                     <div className="input-group-3">
                                         <label className="input-group mb-1">CPF:</label>
