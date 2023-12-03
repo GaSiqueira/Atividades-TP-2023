@@ -1,3 +1,7 @@
+# Desenvolvedores:
+Nome: Gabriel Henrique Siqueira Turma: 2ºDSM Ano: 2023 <br/>
+Nome: Douglas Ferrini Medeiros Turma: 2ºDSM Ano: 2023
+
 # Contextualização:
 Há muito a humanidade utiliza animais como suporte em suas atividades. Além disso, os animais também são utilizados como bichos de estimação, alguns chegam a ser considerados como membros da família – estes são conhecidos como Pets. De acordo com a definição da língua inglesa, a palavra Pet define um animal doméstico ou domesticado mantido para companhia ou contemplação. 
 Outra designação importante é a de “mercado pet”. O mercado pet denota a fatia de mercado que agrupa empresas de produtos e/ou serviços exclusivos para animais, que se encaixam na definição de Pet, ou seja, é o setor de produtos, serviços e comércio de animais de estimação. O principal destaque do mercado pet é a venda de alimentos industrializados para animais de estimação. 
