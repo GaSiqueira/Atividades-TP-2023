@@ -4,7 +4,7 @@ export default function CadastrarPets(props){
         <div className="container-fluid">
         <form>
             <div className="input-group mb-3">
-                <input type="text" className="form-control" placeholder="Nome" aria-label="Nome" aria-describedby="basic-addon1" />
+                <input type="text" className="form-control" placeholder="Nome pet" aria-label="Nome pet" aria-describedby="basic-addon1" />
             </div>
             <div className="input-group mb-3">
                 <input type="text" className="form-control" placeholder="Raça" aria-label="Raça" aria-describedby="basic-addon1" />

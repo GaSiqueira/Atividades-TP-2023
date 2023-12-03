@@ -3,22 +3,25 @@ import { useState } from "react";
 import BarraNavegacao from "./barraNavegacao"
 import ListaCliente from "./Listas/listaCliente";
 import FormularioCadastroCliente from "./cadastros/formularioCadastroCliente";
-import CadastrarPets from "./cadastros/formularioCadastroPets";
+import CadastrarPet from "./cadastros/formularioCadastroPets";
 import Inicio from "./inicio";
 import CadastrarServico from "./cadastros/formularioCadastroServico";
 import CadastrarProduto from "./cadastros/formularioCadastroProduto";
 import ListaPet from "./Listas/listaPet";
 import ListaServico from "./Listas/listaServico";
 import ListaProduto from "./Listas/listaProduto";
+import RegistroVendaProduto from "./Registros/registroVendaProduto";
+import RegistroVendaServico from "./Registros/registroVendaServico";
 
 export default function Roteador() {
-    const [tela, setTela] = useState('Cadastros')
+    const [tela, setTela] = useState('Inicio')
     const selecionarView = (valor, e) => {
         e.preventDefault()
         setTela(valor)
     }
 
     const construirView = () => {
+        /* Listar */
         if (tela === 'Listar' || tela === 'Clientes') {
             return (
                 <>
@@ -51,6 +54,8 @@ export default function Roteador() {
                 </>
             )
         }
+
+        /* Cadastrar */
         if (tela === 'Cadastros' || tela === 'Cliente') {
             return (
                 <>
@@ -63,7 +68,7 @@ export default function Roteador() {
             return(
                 <>
                     <BarraNavegacao seletorView={selecionarView} tema="#e3f2fd" botoes={['Inicio', 'Cliente', 'Pet', 'Serviço','Produto']} />
-                    <CadastrarPets tema="#e3f2fd" />
+                    <CadastrarPet tema="#e3f2fd" />
                 </>
             )
         }
@@ -83,10 +88,28 @@ export default function Roteador() {
                 </>
             )
         }
+
+        /* Registrar */
+        if(tela === 'Registrar' || tela === 'Venda Produto'){
+            return(
+                <>
+                    <BarraNavegacao seletorView={selecionarView} tema="#e3f2fd" botoes={['Inicio', 'Venda Produto', 'Venda Serviço']} />
+                    <RegistroVendaProduto tema="#e3f2fd"/>
+                </>
+            )
+        }
+        if(tela === 'Venda Serviço'){
+            return(
+                <>
+                    <BarraNavegacao seletorView={selecionarView} tema="#e3f2fd" botoes={['Inicio', 'Venda Produto', 'Venda Serviço']} />
+                    <RegistroVendaServico tema="#e3f2fd"/>
+                </>
+            )
+        }
         else{
             return(
                 <>
-                    <BarraNavegacao seletorView={selecionarView} tema="#e3f2fd" botoes ={['Listar', 'Cadastros']} />
+                    <BarraNavegacao seletorView={selecionarView} tema="#e3f2fd" botoes ={['Listar', 'Cadastros', 'Registrar']} />
                     <Inicio tema='#e3f2fd'/>
                 </>
             )
