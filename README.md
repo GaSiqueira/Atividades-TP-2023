@@ -1,4 +1,4 @@
-# Sobre o projeto:
+# Contextualização:
 Há muito a humanidade utiliza animais como suporte em suas atividades. Além disso, os animais também são utilizados como bichos de estimação, alguns chegam a ser considerados como membros da família – estes são conhecidos como Pets. De acordo com a definição da língua inglesa, a palavra Pet define um animal doméstico ou domesticado mantido para companhia ou contemplação. 
 Outra designação importante é a de “mercado pet”. O mercado pet denota a fatia de mercado que agrupa empresas de produtos e/ou serviços exclusivos para animais, que se encaixam na definição de Pet, ou seja, é o setor de produtos, serviços e comércio de animais de estimação. O principal destaque do mercado pet é a venda de alimentos industrializados para animais de estimação. 
 O mercado pet teve um crescimento de 14% em 2022, com um faturamento de R$58,9 bilhões, segundo estimativas do Instituto Pet Brasil (IPB). A projeção foi feita levando em conta o desempenho do setor no primeiro trimestre de 2022. O faturamento consolidado em 2021 foi de R$51,7 bilhões. 
