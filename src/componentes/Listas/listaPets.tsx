@@ -30,10 +30,10 @@ export default class ListaPet extends Component<props>{
                                             <input type="text" className="form-control" placeholder="Raça" aria-label="Raça" aria-describedby="basic-addon1" />
                                         </div>
                                         <div className="input-group mb-3">
-                                            <input type="text" className="form-control" placeholder="Tipo" aria-label="Tipo" aria-describedby="basic-addon1" />
+                                            <input type="text" className="form-control" placeholder="Gênero" aria-label="Gênero" aria-describedby="basic-addon1" />
                                         </div>
                                         <div className="input-group mb-3">
-                                            <input type="text" className="form-control" placeholder="Raça" aria-label="Raça" aria-describedby="basic-addon1" />
+                                            <input type="text" className="form-control" placeholder="Tipo" aria-label="Tipo" aria-describedby="basic-addon1" />
                                         </div>
                                         <div className="input-group mb-3">
                                             <button className="input-group-text" style={{ background: red }}>Deletar</button>
@@ -62,10 +62,10 @@ export default class ListaPet extends Component<props>{
                                             <input type="text" className="form-control" placeholder="Raça" aria-label="Raça" aria-describedby="basic-addon1" />
                                         </div>
                                         <div className="input-group mb-3">
-                                            <input type="text" className="form-control" placeholder="Tipo" aria-label="Tipo" aria-describedby="basic-addon1" />
+                                            <input type="text" className="form-control" placeholder="Gênero" aria-label="Gênero" aria-describedby="basic-addon1" />
                                         </div>
                                         <div className="input-group mb-3">
-                                            <input type="text" className="form-control" placeholder="Raça" aria-label="Raça" aria-describedby="basic-addon1" />
+                                            <input type="text" className="form-control" placeholder="Tipo" aria-label="Tipo" aria-describedby="basic-addon1" />
                                         </div>
                                         <div className="input-group mb-3">
                                             <button className="input-group-text" style={{ background: red }}>Deletar</button>
@@ -94,10 +94,10 @@ export default class ListaPet extends Component<props>{
                                             <input type="text" className="form-control" placeholder="Raça" aria-label="Raça" aria-describedby="basic-addon1" />
                                         </div>
                                         <div className="input-group mb-3">
-                                            <input type="text" className="form-control" placeholder="Tipo" aria-label="Tipo" aria-describedby="basic-addon1" />
+                                            <input type="text" className="form-control" placeholder="Gênero" aria-label="Gênero" aria-describedby="basic-addon1" />
                                         </div>
                                         <div className="input-group mb-3">
-                                            <input type="text" className="form-control" placeholder="Raça" aria-label="Raça" aria-describedby="basic-addon1" />
+                                            <input type="text" className="form-control" placeholder="Tipo" aria-label="Tipo" aria-describedby="basic-addon1" />
                                         </div>
                                         <div className="input-group mb-3">
                                             <button className="input-group-text" style={{ background: red }}>Deletar</button>
@@ -126,10 +126,10 @@ export default class ListaPet extends Component<props>{
                                             <input type="text" className="form-control" placeholder="Raça" aria-label="Raça" aria-describedby="basic-addon1" />
                                         </div>
                                         <div className="input-group mb-3">
-                                            <input type="text" className="form-control" placeholder="Tipo" aria-label="Tipo" aria-describedby="basic-addon1" />
+                                            <input type="text" className="form-control" placeholder="Gênero" aria-label="Gênero" aria-describedby="basic-addon1" />
                                         </div>
                                         <div className="input-group mb-3">
-                                            <input type="text" className="form-control" placeholder="Raça" aria-label="Raça" aria-describedby="basic-addon1" />
+                                            <input type="text" className="form-control" placeholder="Tipo" aria-label="Tipo" aria-describedby="basic-addon1" />
                                         </div>
                                         <div className="input-group mb-3">
                                             <button className="input-group-text" style={{ background: red }}>Deletar</button>
@@ -158,10 +158,10 @@ export default class ListaPet extends Component<props>{
                                             <input type="text" className="form-control" placeholder="Raça" aria-label="Raça" aria-describedby="basic-addon1" />
                                         </div>
                                         <div className="input-group mb-3">
-                                            <input type="text" className="form-control" placeholder="Tipo" aria-label="Tipo" aria-describedby="basic-addon1" />
+                                            <input type="text" className="form-control" placeholder="Gênero" aria-label="Gênero" aria-describedby="basic-addon1" />
                                         </div>
                                         <div className="input-group mb-3">
-                                            <input type="text" className="form-control" placeholder="Raça" aria-label="Raça" aria-describedby="basic-addon1" />
+                                            <input type="text" className="form-control" placeholder="Tipo" aria-label="Tipo" aria-describedby="basic-addon1" />
                                         </div>
                                         <div className="input-group mb-3">
                                             <button className="input-group-text" style={{ background: red }}>Deletar</button>
