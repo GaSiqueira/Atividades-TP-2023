@@ -51,7 +51,7 @@ CREATE TABLE IF NOT EXISTS RegVendaServico(
 
 CREATE TABLE IF NOT EXISTS RegVendaProduto(
 	id INT AUTO_INCREMENT PRIMARY KEY,
-    cpf_comprador varchar(11),
+    cpf_cliente varchar(11),
     nome_produto varchar(50),
     quantidade_vendida int
 );
@@ -79,5 +79,3 @@ INSERT INTO produto(nome_produto, desc_produto, valor, vendas) values ('Escova d
 INSERT INTO produto(nome_produto, desc_produto, valor, vendas) values ('Pote para água e ração', 'Pote para água e ração de seu animalzinho', 70.00, 0);
 INSERT INTO produto(nome_produto, desc_produto, valor, vendas) values ('Ração especial pequenos', 'Ração para seu pequeno favorito', 40.00, 0);
 INSERT INTO produto(nome_produto, desc_produto, valor, vendas) values ('Ração de cavalo com anabolizante', 'Ração para seu pastor alemão preferido <3', 560.00, 0);
-
-
