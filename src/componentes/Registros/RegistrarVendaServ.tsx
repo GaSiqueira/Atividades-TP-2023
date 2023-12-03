@@ -11,6 +11,7 @@ export default function RegistrarVendaServico(props:any) {
         const [cpf_cliente, setCpfCliente] = useState('');
         const [nome_servico, setNomeservico] = useState('');
         const [quantidade_vendida, setQuantVendida] = useState('');
+        const [cpfError, setCpfError] = useState('');
         const [campoError, setCampoError] = useState('');
         useEffect(()=>{
             axios.get('http://localhost:3001/servicosVendas')
@@ -32,7 +33,9 @@ export default function RegistrarVendaServico(props:any) {
                     setCampoError('');
                  })
                  .catch((error)=>{
-                    console.error(error)
+                    if(error.response && error.response.data && error.response.data.error === 'CPF do cliente não encontrado'){
+                        setCpfError('CPF do cliente não encontrado')
+                    }
                  })
             }
             else if (cpf_cliente === '' || nome_servico === '' || quantidade_vendida === ''){
@@ -57,6 +60,7 @@ export default function RegistrarVendaServico(props:any) {
                         <button className="btn btn-outline-secondary" onClick={registrar} type="button" style={{ background: tema }}>Registrar venda</button>
                     </div>
                     {campoError && <div className="alert alert-danger" role="alert" style={{color:'red'}}>{campoError}</div>}
+                    {cpfError && <div className="alert alert-danger" role = "alert" style={{color:'red'}}>{cpfError}</div>}
                 </form>
             </div>
         )

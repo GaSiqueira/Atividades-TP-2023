@@ -89,14 +89,29 @@ app.get('/pets', async(req,res)=>{
 app.post('/pets', async(req,res)=>{
   const {cpf_dono, nome_pet, raca, genero, tipo} = req.body
   const connection = await connect()
-  await connection.execute('INSERT INTO pet (cpf_dono, nome_pet, raca, genero, tipo) VALUES (?, ?, ?, ?, ?)', [cpf_dono, nome_pet, raca, genero, tipo])
-  res.json({message: 'Resgistro de pet feito com sucesso'})
-})
-app.get('/pets', async(req,res)=>{
-  const connection = await connect()
-  const[rows] = await connection.execute('SELECT * FROM pet')
-  connection.end()
-  res.json(rows)
+  try{
+    const[rows] = await connection.execute('SELECT * FROM cliente WHERE cpf =?', [cpf_dono])
+    if(rows.length > 0 ){
+    await connection.execute('INSERT INTO pet (cpf_dono, nome_pet, raca, genero, tipo) VALUES (?, ?, ?, ?, ?)', [cpf_dono, nome_pet, raca, genero, tipo])
+    res.json({message: 'Resgistro de pet feito com sucesso'})
+    }
+    else{
+      res.status(404).json({error: 'CPF não encontrado'})
+    }
+  } catch(error){
+    console.log(error);
+    res.status(500).json({error: 'Ocorreu um erro durante o processo'})
+  }
+  finally{
+    try{
+      if(connection){
+        await connection.end()
+      }
+    }catch(error){
+      console.log('Erro ao encerrar conexão com o banco de dados')
+    }
+  }
+
 })
 
 app.delete('/pets/:id', async (req, res) => {
@@ -230,13 +245,34 @@ app.post('/servicosVendas', async(req,res)=>{
   const {cpf_cliente, nome_servico, quantidade_vendida} = req.body
   const connection = await connect()
   /* Insert na tabela */
-  await connection.execute('INSERT INTO RegVendaServico (cpf_cliente, nome_servico, quantidade_vendida) VALUES (?, ?, ?)', [cpf_cliente, nome_servico, quantidade_vendida])
-  res.json({message: 'Resgistro da venda do servico feito com sucesso'})
+  try{
+    const[rows] = await connection.execute('SELECT * FROM cliente WHERE cpf =?', [cpf_cliente])
+    if(rows.length > 0 ){
+    await connection.execute('INSERT INTO RegVendaServico (cpf_cliente, nome_produto, quantidade_vendida) VALUES (?, ?, ?)', [cpf_cliente, nome_servico, quantidade_vendida])
+    res.json({message: 'Resgistro de venda do produto feito com sucesso'})
+    }
+    else{
+      res.status(404).json({error: 'CPF do cliente não encontrado'})
+    }
+  } catch(error){
+    console.log(error);
+    res.status(500).json({error: 'Ocorreu um erro durante o processo'})
+  }
+  finally{
+    try{
+      if(connection){
+        await connection.end()
+      }
+    }catch(error){
+      console.log('Erro ao encerrar conexão com o banco de dados')
+    }
+  }
 })
 
 /* Registro venda produto */
 app.get('/produtosVendas', async(req,res)=>{
   const connection = await connect()
+  
   const[rows] = await connection.execute('SELECT * FROM RegVendaProduto')
   connection.end()
   res.json(rows)
@@ -246,14 +282,29 @@ app.post('/produtosVendas', async(req,res)=>{
   const {cpf_cliente, nome_produto, quantidade_vendida} = req.body
   const connection = await connect()
   /* Insert na tabela */
-  await connection.execute('INSERT INTO RegVendaProduto (cpf_cliente, nome_produto, quantidade_vendida) VALUES (?, ?, ?)', [cpf_cliente, nome_produto, quantidade_vendida])
-  res.json({message: 'Resgistro da venda do servico feito com sucesso'})
+  try{
+    const[rows] = await connection.execute('SELECT * FROM cliente WHERE cpf =?', [cpf_cliente])
+    if(rows.length > 0 ){
+    await connection.execute('INSERT INTO RegVendaServico (cpf_cliente, nome_produto, quantidade_vendida) VALUES (?, ?, ?)', [cpf_cliente, nome_produto, quantidade_vendida])
+    res.json({message: 'Resgistro de venda do produto feito com sucesso'})
+    }
+    else{
+      res.status(404).json({error: 'CPF do cliente não encontrado'})
+    }
+  } catch(error){
+    console.log(error);
+    res.status(500).json({error: 'Ocorreu um erro durante o processo'})
+  }
+  finally{
+    try{
+      if(connection){
+        await connection.end()
+      }
+    }catch(error){
+      console.log('Erro ao encerrar conexão com o banco de dados')
+    }
+  }
 })
-
-
-
-
-
 
 app.listen(port, () => {
   console.log(`Servidor rodando em http://localhost:${port}`);

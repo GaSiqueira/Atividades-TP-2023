@@ -12,6 +12,7 @@ export default function FormularioCadastroPet (props: any){
         const[raca, setRaca] = useState('')
         const[genero, setGenero] = useState('')
         const[tipo, setTipo] = useState('')
+        const[cpfError, setCpfError] = useState('')
         const[campoError, setCampoError] = useState('')
 
         useEffect(()=>{
@@ -36,7 +37,9 @@ export default function FormularioCadastroPet (props: any){
                     setCampoError('')
                  })
                  .catch((error)=>{
-                    console.error(error)
+                    if(error.response && error.response.data && error.response.data.error === 'CPF do cliente não encontrado'){
+                        setCpfError('CPF do cliente não encontrado')
+                    }
                  })
             }
             else if(nome_pet === '' || raca === '' || genero === '' || cpf_dono === '' || tipo === ''){
@@ -57,7 +60,12 @@ export default function FormularioCadastroPet (props: any){
                         <input type="text" className="form-control" value={raca} onChange={(e)=>setRaca(e.target.value)} placeholder="Raça do pet" aria-label="Nome do pet" aria-describedby="basic-addon1"/>
                     </div>
                     <div className="input-group mb-3">
-                        <input type="text" className="form-control" value={genero} onChange={(e)=>setGenero(e.target.value)} placeholder="Gênero" aria-label="Gênero" aria-describedby="basic-addon1"/>
+                        <select className="form-select" value={genero} onChange={(e)=>setGenero(e.target.value)}>
+                            <option value="">Gênero</option>
+                            <option value="masculino">Masculino</option>
+                            <option value="feminino">Feminino</option>
+                            <option value="outro">Outro</option>
+                        </select>
                     </div>
                     <div className="input-group mb-3">
                         <input type="text" className="form-control" value={tipo} onChange={(e)=>setTipo(e.target.value)} placeholder="Tipo do pet" aria-label="Tipo do pet" aria-describedby="basic-addon1"/>
@@ -67,6 +75,7 @@ export default function FormularioCadastroPet (props: any){
                     </div>
                 </form>
                 {campoError && <div className="alert alert-danger" role = "alert" style={{color:'red'}}>{campoError}</div>}
+                {cpfError && <div className="alert alert-danger" role = "alert" style={{color:'red'}}>{cpfError}</div>}
             </div>
         )
 }
