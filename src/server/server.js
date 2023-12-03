@@ -248,7 +248,7 @@ app.post('/servicosVendas', async(req,res)=>{
   try{
     const[rows] = await connection.execute('SELECT * FROM cliente WHERE cpf =?', [cpf_cliente])
     if(rows.length > 0 ){
-    await connection.execute('INSERT INTO RegVendaServico (cpf_cliente, nome_produto, quantidade_vendida) VALUES (?, ?, ?)', [cpf_cliente, nome_servico, quantidade_vendida])
+    await connection.execute('INSERT INTO RegVendaServico (cpf_cliente, nome_servico, quantidade_vendida) VALUES (?, ?, ?)', [cpf_cliente, nome_servico, quantidade_vendida])
     res.json({message: 'Resgistro de venda do produto feito com sucesso'})
     }
     else{
@@ -285,7 +285,7 @@ app.post('/produtosVendas', async(req,res)=>{
   try{
     const[rows] = await connection.execute('SELECT * FROM cliente WHERE cpf =?', [cpf_cliente])
     if(rows.length > 0 ){
-    await connection.execute('INSERT INTO RegVendaServico (cpf_cliente, nome_produto, quantidade_vendida) VALUES (?, ?, ?)', [cpf_cliente, nome_produto, quantidade_vendida])
+    await connection.execute('INSERT INTO RegVendaProduto (cpf_cliente, nome_produto, quantidade_vendida) VALUES (?, ?, ?)', [cpf_cliente, nome_produto, quantidade_vendida])
     res.json({message: 'Resgistro de venda do produto feito com sucesso'})
     }
     else{
